@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Bandna Kumari — Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <h1 class="logo">Bandna Kumari</h1>
+      <nav class="nav">
+        <a href="#about">About</a>
+        <a href="#education">Education</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container hero-inner">
+      <div class="hero-text">
+        <h2>Hello — I'm Bandna</h2>
+        <p class="subtitle">MSc | Aspiring professional focused on learning, collaboration, and solving problems.</p>
+        <p>
+          A concise intro about your interests, strengths, or what you're looking for (e.g., internships, collaborations, research).
+        </p>
+        <div class="hero-actions">
+          <a class="btn" href="#contact">Get in touch</a>
+          <a class="btn btn-outline" href="#" aria-disabled="true">Download CV</a>
+        </div>
+      </div>
+      <div class="hero-photo" aria-hidden="true">
+        <!-- Replace with your photo: <img src="photo.jpg" alt="Bandna Kumari"> -->
+        <div class="photo-placeholder">Photo</div>
+      </div>
+    </div>
+  </section>
+
+  <main class="container">
+    <section id="about" class="card">
+      <h3>About</h3>
+      <p>
+        I am Bandna Kumari, MSc. Briefly describe your background, research interests, or career goals here.
+      </p>
+    </section>
+
+    <section id="education" class="card">
+      <h3>Education</h3>
+      <ul>
+        <li>
+          <strong>MSc</strong> — [Your University], Year (add year)
+          <p class="muted">Relevant coursework: (optional)</p>
+        </li>
+      </ul>
+    </section>
+
+    <section id="skills" class="card">
+      <h3>Skills</h3>
+      <ul class="skills-list">
+        <li>Research & Analysis</li>
+        <li>Data Interpretation</li>
+        <li>Technical Writing</li>
+        <li>Communication</li>
+        <!-- Add or replace with technical skills, tools, languages -->
+      </ul>
+    </section>
+
+    <section id="projects" class="card">
+      <h3>Projects</h3>
+      <div class="projects-grid">
+        <article class="project">
+          <h4>Project Title 1</h4>
+          <p>Short description of a project, paper, or assignment. Add links if available.</p>
+        </article>
+        <article class="project">
+          <h4>Project Title 2</h4>
+          <p>Short description of another project or accomplishment.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="contact" class="card">
+      <h3>Contact</h3>
+      <p>Email: <a href="mailto:your.email@example.com">your.email@example.com</a></p>
+      <form id="contactForm">
+        <label>
+          Name
+          <input type="text" name="name" placeholder="Your name" required>
+        </label>
+        <label>
+          Email
+          <input type="email" name="email" placeholder="you@example.com" required>
+        </label>
+        <label>
+          Message
+          <textarea name="message" rows="4" placeholder="A short message" required></textarea>
+        </label>
+        <button type="submit" class="btn">Send</button>
+        <p class="muted">This form uses your email client to send a message.</p>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="year"></span> Bandna Kumari — MSc</p>
+    </div>
+  </footer>
+
+  <script>
+    // Fill current year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Simple contact form handler: opens user's email client with form contents
+    document.getElementById('contactForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+      const name = encodeURIComponent(this.name.value.trim());
+      const email = encodeURIComponent(this.email.value.trim());
+      const message = encodeURIComponent(this.message.value.trim());
+      const subject = encodeURIComponent('Portfolio contact from ' + name);
+      const body = encodeURIComponent('Name: ' + name + '\nEmail: ' + email + '\n\n' + message);
+      window.location.href = 'mailto:your.email@example.com?subject=' + subject + '&body=' + body;
+    });
+  </script>
+</body>
+</html>
